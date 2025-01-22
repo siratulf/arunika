@@ -4,7 +4,7 @@ hide_github_icon = """
 <style>
 #button.st-emotion-cache-15wzwg4
 {
-visibility: hidden;
+display: None;
 }
 </style>
 """
