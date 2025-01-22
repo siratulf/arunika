@@ -8,8 +8,8 @@ st.caption("Halaman ini digunakan untuk melakukan entri Lembar Jaga, melakukan *
 
 #List Alokasi Petugas dan Variabel Jaga
 list_pml = pd.read_csv("List_PML.csv", sep="\t")
-list_ppl = pd.read_csv("List_PPL.csv", sep="\t")
-list_nks = pd.read_csv("List_NKS", sep="\t")
+list_ppl = pd.read_csv("List_PPL.csv")
+list_nks = pd.read_csv("List_NKS.csv", sep="\t")
 list_nus = range(1,11,1)
 df_var = pd.read_csv("List_VAR.csv", sep="\t")
 list_var = df_var["Variabel"].to_list()
