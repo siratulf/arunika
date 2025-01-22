@@ -1,5 +1,16 @@
 import streamlit as st
 
+hide_github_icon = """
+<style>
+#button.st-emotion-cache-15wzwg4
+{
+visibility: hidden;
+}
+</style>
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
+
 st.set_page_config(
     page_title="A.RU.NI.KA :sunrise:",
     layout= "wide",
