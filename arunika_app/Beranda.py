@@ -12,7 +12,7 @@ st.caption("Aplikasi Reviu Susenas-Seruti dan Kalkulasinya (versi beta)")
 st.write("---")
 
 homepage_desc_1 = """
-Saya Pada September 2024, Lembar Pemeriksaan Susenas 2024 (LEPAS-2024) dikembangkan untuk menjaga rincian-rincian pertanyaan yang sering kali terlewatkan
+Pada September 2024, Lembar Pemeriksaan Susenas 2024 (LEPAS-2024) dikembangkan untuk menjaga rincian-rincian pertanyaan yang sering kali terlewatkan
 saat pendataan lapangan. Dengan segala keterbatasannya LEPAS-2024 cukup memberikan dampak yang baik dalam mencegah data yang anomali. Sehingga pada
 tahun 2025 ini, LEPAS-2024 dimodifikasi sedemikian rupa sehingga terciptalah aplikasi web yang lebih terbarukan yang diberi nama A.RU.NI.KA :sunrise:.
 """
