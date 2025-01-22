@@ -7,11 +7,11 @@ st.header("**Lembar Jaga Susenas-Seruti :pencil:**")
 st.caption("Halaman ini digunakan untuk melakukan entri Lembar Jaga, melakukan **deteksi anomali** dan melakukan *review* terhadap hasil entri tersebut, serta menampilkan ringkasan deskriptif terkait data terkini :sunglasses:")
 
 #List Alokasi Petugas dan Variabel Jaga
-list_pml = pd.read_excel("database_ssn.xlsx",  sheet_name="PML")
-list_ppl = pd.read_excel("database_ssn.xlsx",  sheet_name="PPL")
-list_nks = pd.read_excel("database_ssn.xlsx",  sheet_name="NKS")
+list_pml = pd.read_csv("List_PML.csv")
+list_ppl = pd.read_csv("List_PPL.csv")
+list_nks = pd.read_csv("List_NKS")
 list_nus = range(1,11,1)
-df_var = pd.read_excel("database_ssn.xlsx",  sheet_name="VAR")
+df_var = pd.read_csv("List_VAR.csv")
 list_var = df_var["Variabel"].to_list()
 
 #File Respons Data Masukan
@@ -158,7 +158,7 @@ with tab2:
     response_data = pd.read_csv("data_input_response.csv")
 
     #Import List Kode Anomali
-    kode_anomali = pd.read_excel("database_ssn.xlsx", sheet_name="Anomali")
+    kode_anomali = pd.read_csv("List_Anomali.csv")
     kode_anomali = kode_anomali["Kode Anomali"].to_list()
 
     #Anomali dan Rumah Tangga yang terkait
