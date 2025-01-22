@@ -6,14 +6,6 @@ st.set_page_config(
     initial_sidebar_state= "collapsed"
 )
 
-hide_github_icon = """
-<style>
-#MainMenu {visibility = hidden}
-</style>
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
-
-
 #Beranda
 st.title("A.RU.NI.KA :sunrise:")
 st.caption("Aplikasi Reviu Susenas-Seruti dan Kalkulasinya (versi beta)")
