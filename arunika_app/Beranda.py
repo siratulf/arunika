@@ -1,5 +1,11 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="A.RU.NI.KA :sunrise:",
+    layout= "wide",
+    initial_sidebar_state= "collapsed"
+)
+
 hide_github_icon = """
 <style>
 #button.st-emotion-cache-15wzwg4
@@ -10,12 +16,6 @@ display: None;
 """
 st.markdown(hide_github_icon, unsafe_allow_html=True)
 
-
-st.set_page_config(
-    page_title="A.RU.NI.KA :sunrise:",
-    layout= "wide",
-    initial_sidebar_state= "collapsed"
-)
 
 #Beranda
 st.title("A.RU.NI.KA :sunrise:")
