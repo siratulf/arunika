@@ -7,15 +7,15 @@ st.header("**Lembar Jaga Susenas-Seruti :pencil:**")
 st.caption("Halaman ini digunakan untuk melakukan entri Lembar Jaga, melakukan **deteksi anomali** dan melakukan *review* terhadap hasil entri tersebut, serta menampilkan ringkasan deskriptif terkait data terkini :sunglasses:")
 
 #List Alokasi Petugas dan Variabel Jaga
-list_pml = pd.read_csv("List_PML.csv", sep="\t")
-list_ppl = pd.read_csv("List_PPL.csv")
-list_nks = pd.read_csv("List_NKS.csv", sep="\t")
+list_pml = pd.read_csv("arunika_app/List_PML.csv", sep="\t")
+list_ppl = pd.read_csv("arunika_app/List_PPL.csv", sep="\t")
+list_nks = pd.read_csv("arunika_app/List_NKS.csv", sep="\t")
 list_nus = range(1,11,1)
-df_var = pd.read_csv("List_VAR.csv", sep="\t")
+df_var = pd.read_csv("arunika_app/List_VAR.csv", sep="\t")
 list_var = df_var["Variabel"].to_list()
 
 #File Respons Data Masukan
-csv_file_path = "data_input_response.csv"
+csv_file_path = "arunika_app/data_input_response.csv"
 data = pd.DataFrame(columns= list_var)
 if os.path.exists(csv_file_path):
     data = pd.read_csv(csv_file_path)
@@ -155,10 +155,10 @@ with tab1:
 
 with tab2:
     #Import dataframe hasil masukan
-    response_data = pd.read_csv("data_input_response.csv")
+    response_data = pd.read_csv("arunika_app/data_input_response.csv")
 
     #Import List Kode Anomali
-    kode_anomali = pd.read_csv("List_Anomali.csv", sep="\t")
+    kode_anomali = pd.read_csv("arunika_app/List_Anomali.csv", sep="\t")
     kode_anomali = kode_anomali["Kode Anomali"].to_list()
 
     #Anomali dan Rumah Tangga yang terkait
@@ -187,7 +187,7 @@ with tab2:
 
 with tab3:
     #Import dataframe hasil masukan
-    hasil_input = pd.read_csv("data_input_response.csv")
+    hasil_input = pd.read_csv("arunika_app/data_input_response.csv")
 
     #Dictionary filtering variable
     filter_var = {}
@@ -235,7 +235,7 @@ with tab3:
 
 with tab4:
     #Metriks Dataframe
-    data_input = pd.read_csv("data_input_response.csv")
+    data_input = pd.read_csv("arunika_app/data_input_response.csv")
     st.subheader("Ringkasan Deskriptif :bar_chart:")
 
     #Kolom Metrik
