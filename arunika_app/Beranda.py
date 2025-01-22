@@ -6,18 +6,6 @@ st.set_page_config(
     initial_sidebar_state= "collapsed"
 )
 
-# Add custom CSS to hide the GitHub icon
-st.markdown(
-    <style>
-    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
-    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-    .viewerBadge_text__1JaDK {
-        display: none;
-    }
-    </style>,
-    unsafe_allow_html=True
-)
-
 #Beranda
 st.title("A.RU.NI.KA :sunrise:")
 st.caption("Aplikasi Reviu Susenas-Seruti dan Kalkulasinya (versi beta)")
