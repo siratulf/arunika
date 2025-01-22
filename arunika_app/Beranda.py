@@ -8,7 +8,7 @@ st.set_page_config(
 
 hide_github_icon = """
 <style>
-#button.st-emotion-cache-15wzwg4 {
+div.stToolbarActions.st-emotion-cache-1p1m4ay.e319eg82 {
     visibility : hidden;
 }
 </style>
