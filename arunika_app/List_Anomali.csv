@@ -1,0 +1,13 @@
+Kode Anomali
+A001 Jumlah Komoditas Makanan kurang dari 13
+A002 Jumlah Komoditas Non Makanan kurang dari 19
+A003 Jumlah Konsumsi Beras Kg/Kapita kurang dari 1.8 kg atau lebih dari sama dengan 2.8 kg
+A004 Jumlah Konsumsi Gula Ons/Kapita lebih dari 2.5 Ons
+A005 Jumlah Konsumsi Garam Gram/Kapita lebih dari 28 Gram
+A006 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Melahirkan
+A007 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Periksa Kehamilan
+A008 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Imunisasi
+A009 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Pakaian Bayi
+A010 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Minyak Telon
+A011 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Sekolah dan Iuran Komite
+A012 Terdapat ART yang masih bersekolah akan tetapi tidak ada Iuran Sekolah Lainnya
