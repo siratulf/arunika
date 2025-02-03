@@ -1,13 +1,29 @@
 Kode Anomali
-A001 Jumlah Komoditas Makanan kurang dari 13
-A002 Jumlah Komoditas Non Makanan kurang dari 19
-A003 Jumlah Konsumsi Beras Kg/Kapita kurang dari 1.8 kg atau lebih dari sama dengan 2.8 kg
-A004 Jumlah Konsumsi Gula Ons/Kapita lebih dari 2.5 Ons
-A005 Jumlah Konsumsi Garam Gram/Kapita lebih dari 28 Gram
-A006 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Melahirkan
-A007 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Periksa Kehamilan
-A008 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Imunisasi
-A009 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Pakaian Bayi
-A010 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Minyak Telon
-A011 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Sekolah dan Iuran Komite
-A012 Terdapat ART yang masih bersekolah akan tetapi tidak ada Iuran Sekolah Lainnya
+AK001 Ada ART yang tidak mempunyai NIK
+AK002 Ada ART yang buta huruf
+AK003 Luas Lantai Rumah kurang dari 8 m2 per kapita
+AKP01 Jumlah Komoditas Makanan kurang dari 13
+AKP02 Jumlah Komoditas Non Makanan kurang dari 19
+AKP03 Jumlah Konsumsi Beras Kg/Kapita kurang dari 1.8 kg atau lebih dari sama dengan 2.8 kg
+AKP04 Jumlah Konsumsi Gula Ons/Kapita lebih dari 2.5 Ons
+AKP05 Jumlah Konsumsi Garam Gram/Kapita lebih dari 28 Gram
+AKP06 Memiliki Kendaraan Bermotor akan tetapi Pengeluaran Bensin atau Solar tidak ada
+AKP07 Memiliki Kendaraan Bermotor akan tetapi Pengeluaran Minyak Pelumas tidak ada
+AKP08 Memiliki Kendaraan Bermotor akan tetapi Pengeluaran Perbaikan dan Pemeliharaan Kendaraan Bermotor tidak ada
+AKP09 Memiliki Kendaraan Bermotor akan tetapi Pengeluaran Pajak Kendaraan Bermotor tidak ada
+AKP10 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Melahirkan
+AKP11 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Periksa Kehamilan
+AKP12 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Imunisasi
+AKP13 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Pakaian Bayi
+AKP14 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Barang Lainnya (Pampers atau Minyak Telon)
+AKP15 Terdapat ART Wanita Kawin Usia 10-54 Tahun akan tetapi tidak ada Pengeluaran Keluarga Berencana
+AKP16 Terdapat ART berusia 60 Tahun keatas akan tetapi tidak ada Biaya Pemeliharaan Kesehatan Lainnya
+AKP17 Terdapat ART yang masih bersekolah akan tetapi tidak ada Sumbangan Pembangunan Sekolah
+AKP18 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Sekolah dan Iuran Komite
+AKP19 Terdapat ART yang masih bersekolah akan tetapi tidak ada Iuran Sekolah Lainnya
+AKP20 Terdapat ART yang masih bersekolah akan tetapi tidak ada Biaya Buku Pelajaran
+AKP21 Terdapat ART yang masih bersekolah akan tetapi tidak ada Alat-alat Tulis
+AKP22 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Kursus di Luar Sekolah
+AKP23 Tidak Memiliki Kendaraan Bermotor akan tetapi tidak ada Pengeluaran Transportasi Darat
+AKP24 Menerima Bantuan Pemerintah akan tetapi rincian Bantuan Pemerintah dalam bentuk uang atau barang tidak terisi
+AKP25 Biaya Wajib ada yang tidak terisi

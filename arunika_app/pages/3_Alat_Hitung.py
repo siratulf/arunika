@@ -4,8 +4,10 @@ import os
 
 #Judul Halaman
 st.title("Alat Hitung Susenas 2025 :computer:")
+st.markdown("Halaman ini masih dalam pengembangan")
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Imputasi dan Konverter", "Blok IV.3.2", "Blok IV.3.3", "Blok V", "Blok VI", "Blok VII"])
+
+masih_dikembangkan = """ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Imputasi dan Konverter", "Blok IV.3.2", "Blok IV.3.3", "Blok V", "Blok VI", "Blok VII"])
 
 with tab1:
     st.subheader("Imputasi dan Konverter")
@@ -170,3 +172,5 @@ with tab5:
 
 with tab6:
     st.write("Blok VII TRANSAKSI KEUANGAN RUMAH TANGGA SELAMA SETAHUN TERAKHIR")
+
+"""
