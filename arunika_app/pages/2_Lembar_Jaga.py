@@ -35,8 +35,11 @@ with tab1:
         st.write("Masukkan Isian sesuai Lembar Jaga:")
         st.caption("Untuk desimal menggunakan titik bukan koma")
         st.write("")
+
+        form_values["Sudah Selesai"] = st.selectbox("Apakah Ruta ini Sudah Selesai?", options=["Sudah", "Belum"], index=None, placeholder="Pilih salah satu")
         
         #Identitas Petugas dan Wilayah Tugas
+        st.write("------------------------------------------------------------------------------------")
         st.write("Identitas Petugas dan Wilayah Tugas:")    
         form_values["Nama PML"] = st.selectbox("Nama PML", list_pml, index=None, placeholder= "Pilih salah satu")        
         form_values["Nama PPL"] = st.selectbox("Nama PPL", list_ppl, index=None, placeholder= "Pilih salah satu")
@@ -49,7 +52,8 @@ with tab1:
         form_values["Jumlah ART Wanita Kawin Usia 10-54 Tahun"] = st.number_input("R.305 Jumlah ART Wanita Kawin Usia 10-54 Tahun", min_value= 0)
         form_values["Jumlah ART diatas 60 Tahun"] = st.number_input("R.407 Jumlah ART diatas 60 Tahun", min_value= 0)
         form_values["Jumlah ART dibawah 10 Tahun"] = st.number_input("R.407 Jumlah ART dibawah 10 Tahun", min_value= 0)
-        form_values["Jumlah ART dibawah 1 Tahun"] = st.number_input("R.407 Jumlah ART dibawah 1 tahun", min_value= 0)
+        form_values["Jumlah ART dibawah 5 Tahun"] = st.number_input("R.407 Jumlah ART dibawah 5 Tahun", min_value=0)      
+        form_values["Jumlah ART dibawah 1 Tahun"] = st.number_input("R.407 Jumlah ART dibawah 1 Tahun", min_value= 0)
         form_values["Tidak Mempunyai NIK"] = st.selectbox("R.505 Apakah ada ART yang tidak memiliki NIK atau berkode 5?", ["Ada", "Tidak ada"], placeholder="Pilih salah satu")
         form_values["Jumlah ART yang masih sekolah"] = st.number_input("R.605 berkode 1 dan R.611 berkode 2 Jumlah ART yang masih sekolah", min_value= 0)
         form_values["Buta Huruf"] = st.selectbox("R.608-610 Apakah ada ART yang berkode 5 untuk tiga rincian pertanyaan ini?", ["Ada", "Tidak ada"], placeholder="Pilih salah satu")
@@ -57,7 +61,6 @@ with tab1:
         form_values["Kepemilikan Kendaraan Bermotor"] = st.selectbox("R.1801 H/J/K ada yang berkode 1 Apakah Rumah Tangga ini memiliki kendaraan bermotor?", ["Ada", "Tidak ada"], placeholder="Pilih salah satu")
         form_values["Penerimaan Bantuan Pemerintah"] = st.selectbox("R.1101 berkode A atau Blok XX ada yang berkode Ya untuk Penerimaan Bantuan Pemerintah?", ["Ada", "Tidak ada"], placeholder= "Pilih salah satu")
 
-        
         ##Dokumen VSEN25.KP
         #Blok III
         st.write("------------------------------------------------------------------------------------")
@@ -95,15 +98,22 @@ with tab1:
         form_values["Biaya Periksa Kehamilan"] = st.number_input("Blok IV.2 R.287 Biaya Periksa Kehamilan", min_value=0)
         form_values["Biaya Imunisasi"] = st.number_input("Blok IV.2 R.288 Biaya Imunisasi", min_value= 0)
         form_values["Biaya Pakaian Bayi"] = st.number_input("Blok IV.2 R.310 Biaya Pakaian Bayi (Termasuk popok bayi berbahan kain)", min_value= 0)
+        form_values["Kereta Bayi"] = st.number_input("Blok IV.2 R.333 Biaya Kereta Bayi/Stroller)", min_value= 0)
+
+        #Biaya yang seharusnya dikeluarkan jika mempunyai ART berusia dibawah 5 Tahun
+        st.write("------------------------------------------------------------------------------------")
+        st.write("Biaya yang seharusnya dikeluarkan jika mempunyai ART berusia dibawah 5 Tahun")
+        form_values["Mainan Anak"] = st.number_input("Blok IV.2 R.328 Pembelian Mainan Anak (Termasuk Sepeda Roda Tiga)", min_value=0)
 
         #Biaya yang seharusnya dikeluarkan jika mempunyai ART Wanita Kawin Usia 10 - 54 Tahun
         st.write("------------------------------------------------------------------------------------")
         st.write("Biaya yang seharusnya dikeluarkan jika mempunyai ART Wanita Kawin Usia 10 - 54 Tahun")
+        form_values["Barang Kecantikan dan Pembalut Wanita"] = st.number_input("Blok IV.2 R.270 Barang Kecantikan dan Pembalut Wanita", min_value= 0)
         form_values["Pengeluaran Keluarga Berencana"] = st.number_input("Blok IV.2 R.290 Pengeluaran Keluarga Berencana", min_value= 0)
         
-        #Biaya yang seharusnya dikeluarkan jika mempunyai ART berusia diatas 60 Tahun
+        #Biaya yang seharusnya dikeluarkan jika mempunyai ART berusia diatas 60 Tahun dan/atau mempunyai ART berusia dibawah 1 Tahun
         st.write("------------------------------------------------------------------------------------")
-        st.write("Biaya yang seharusnya dikeluarkan jika mempunyai ART berusia diatas 60 Tahun")
+        st.write("Biaya yang seharusnya dikeluarkan jika mempunyai ART berusia diatas 60 Tahun dan/atau mempunyai ART berusia dibawah 1 Tahun")
         form_values["Biaya Pemeliharaan Kesehatan Lainnya"] = st.number_input("Blok IV.2 R.291 Biaya Pemeliharaan Kesehatan Lainnya", min_value= 0)
 
         #Biaya yang seharusnya dikeluarkan jika mempunyai ART yang masih bersekolah/baru masuk sekolah
@@ -139,7 +149,6 @@ with tab1:
         form_values["Pulsa HP"] = st.number_input("Blok IV.2 R.264 Pulsa HP", min_value= 0)
         form_values["Biaya Internet atau Warnet"] = st.number_input("Blok IV.2 R.266 Biaya Internet", min_value= 0)
         form_values["Sabun Mandi, Pasta Gigi, Sikat Gigi, dan Sampo"] = st.number_input("Blok IV.2 R.269 Sabun Mandi, Pasta Gigi, Sikat Gigi, dan Sampo", min_value= 0)
-        form_values["Barang Kecantikan dan Pembalut Wanita"] = st.number_input("Blok IV.2 R.270 Barang Kecantikan dan Pembalut Wanita", min_value= 0)
         form_values["Perawatan Kulit, Muka, Kuku, Rambut"] = st.number_input("Blok IV.2 R.271 Perawatan Kulit, Muka, Kuku, Rambut", min_value= 0)
         form_values["Sabun Cuci"] = st.number_input("Blok IV.2 R.272 Sabun Cuci", min_value= 0)
         form_values["Bahan Pemeliharaan Pakaian"] = st.number_input("Blok IV.2 R.273 Bahan Pemeliharaan Pakaian", min_value= 0)
@@ -249,49 +258,62 @@ with tab2:
     st.write(kode_anomali[16])
     st.write(response_data.loc[(response_data["Jumlah ART dibawah 1 Tahun"] > 0) & (response_data["Biaya Barang Lainnya"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART dibawah 1 Tahun", "Biaya Barang Lainnya"] ])
 
-    #Terdapat ART Wanita Kawin Usia 10-54 Tahun akan tetapi tidak ada Pengeluaran Keluarga Berencana
+    #Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Kereta Bayi (Barang Tahan Lama Lainnya)
     st.write(kode_anomali[17])
+    st.write(response_data.loc[(response_data["Jumlah ART dibawah 1 Tahun"] > 0) & (response_data["Kereta Bayi"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART dibawah 1 Tahun", "Kereta Bayi"] ])
+
+    #Terdapat ART berusia dibawah 5 Tahun akan tetapi tidak ada Pembelian Mainan Anak
+    st.write(kode_anomali[18])
+    st.write(response_data.loc[(response_data["Jumlah ART dibawah 5 Tahun"] > 0) & (response_data["Mainan Anak"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART dibawah 5 Tahun", "Mainan Anak"] ])
+
+    #Terdapat ART Wanita Kawin Usia 10-54 Tahun akan tetapi tidak ada Pengeluaran Barang Kecantikan dan Pembalut Wanita
+    st.write(kode_anomali[19])
+    st.write(response_data.loc[(response_data["Jumlah ART Wanita Kawin Usia 10-54 Tahun"] > 0) & (response_data["Barang Kecantikan dan Pembalut Wanita"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART Wanita Kawin Usia 10-54 Tahun", "Barang Kecantikan dan Pembalut Wanita"] ])
+
+    #Terdapat ART Wanita Kawin Usia 10-54 Tahun akan tetapi tidak ada Pengeluaran Keluarga Berencana
+    st.write(kode_anomali[20])
     st.write(response_data.loc[(response_data["Jumlah ART Wanita Kawin Usia 10-54 Tahun"] > 0) & (response_data["Pengeluaran Keluarga Berencana"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART Wanita Kawin Usia 10-54 Tahun", "Pengeluaran Keluarga Berencana"] ])
 
-    #Terdapat ART berusia diatas 60 Tahun akan tetapi tidak ada Biaya Pemeliharaan Kesehatan Lainnya
-    st.write(kode_anomali[18])
+    #Terdapat ART berusia diatas 60 Tahun atau ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Pemeliharaan Kesehatan Lainnya
+    st.write(kode_anomali[21])
     st.write(response_data.loc[(response_data["Jumlah ART diatas 60 Tahun"] > 0) & (response_data["Biaya Pemeliharaan Kesehatan Lainnya"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART diatas 60 Tahun", "Biaya Pemeliharaan Kesehatan Lainnya"] ])
+    st.write(response_data.loc[(response_data["Jumlah ART dibawah 1 Tahun"] > 0 ) & (response_data["Biaya Pemeliharaan Kesehatan Lainnya"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART dibawah 1 Tahun", "Biaya Pemeliharaan Kesehatan Lainnya"] ])
 
     #Terdapat ART yang masih bersekolah akan tetapi tidak ada Sumbangan Pembangunan Sekolah
-    st.write(kode_anomali[19])
+    st.write(kode_anomali[22])
     st.write(response_data.loc[(response_data["Jumlah ART yang masih sekolah"] > 0) & (response_data["Sumbangan Pembangunan Sekolah"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART yang masih sekolah", "Sumbangan Pembangunan Sekolah"] ])
 
     #Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Sekolah dan Iuran Komite
-    st.write(kode_anomali[20])
+    st.write(kode_anomali[23])
     st.write(response_data.loc[(response_data["Jumlah ART yang masih sekolah"] > 0) & (response_data["Uang Sekolah dan Iuran Komite"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART yang masih sekolah", "Uang Sekolah dan Iuran Komite"] ])
 
     #Terdapat ART yang masih bersekolah akan tetapi tidak ada Iuran Sekolah Lainnya
-    st.write(kode_anomali[21])
+    st.write(kode_anomali[24])
     st.write(response_data.loc[(response_data["Jumlah ART yang masih sekolah"] > 0) & (response_data["Iuran Sekolah Lainnya"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART yang masih sekolah", "Iuran Sekolah Lainnya"] ])
 
     #Terdapat ART yang masih bersekolah akan tetapi tidak ada Biaya Buku Pelajaran
-    st.write(kode_anomali[22])
+    st.write(kode_anomali[25])
     st.write(response_data.loc[(response_data["Jumlah ART yang masih sekolah"] > 0) & (response_data["Biaya Buku Pelajaran"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART yang masih sekolah", "Biaya Buku Pelajaran"] ])
 
     #Terdapat ART yang masih bersekolah akan tetapi tidak ada Alat-alat Tulis
-    st.write(kode_anomali[23])
+    st.write(kode_anomali[26])
     st.write(response_data.loc[(response_data["Jumlah ART yang masih sekolah"] > 0) & (response_data["Alat-alat Tulis"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART yang masih sekolah", "Alat-alat Tulis"] ])
 
     #Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Kursus di Luar Sekolah
-    st.write(kode_anomali[24])
+    st.write(kode_anomali[27])
     st.write(response_data.loc[(response_data["Jumlah ART yang masih sekolah"] > 0) & (response_data["Uang Kursus di Luar Sekolah"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Jumlah ART yang masih sekolah", "Uang Kursus di Luar Sekolah"] ])
 
     #Tidak Memiliki Kendaraan Bermotor akan tetapi Pengeluaran Transportasi Darat tidak ada
-    st.write(kode_anomali[25])
+    st.write(kode_anomali[28])
     st.write(response_data.loc[(response_data["Kepemilikan Kendaraan Bermotor"] == "Tidak ada") & (response_data["Pengeluaran Transportasi Darat"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Kepemilikan Kendaraan Bermotor", "Pengeluaran Transportasi Darat"] ])
 
     #Menerima Bantuan Pemerintah akan tetapi rincian Bantuan Pemerintah dalam bentuk uang atau barang tidak ada
-    st.write(kode_anomali[26])
+    st.write(kode_anomali[29])
     st.write(response_data.loc[(response_data["Penerimaan Bantuan Pemerintah"] == "Ada") & (response_data["Bantuan Pemerintah dalam bentuk uang"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Penerimaan Bantuan Pemerintah", "Bantuan Pemerintah dalam bentuk uang"] ])
     st.write(response_data.loc[(response_data["Penerimaan Bantuan Pemerintah"] == "Ada") & (response_data["Bantuan Pemerintah dalam bentuk barang"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Penerimaan Bantuan Pemerintah", "Bantuan Pemerintah dalam bentuk barang"] ])
 
     #Biaya Wajib ada yang tidak terisi
-    st.write(kode_anomali[27])
+    st.write(kode_anomali[30])
     
     for var_wajib in list_var_wajib :
         st.write(response_data.loc[(response_data[var_wajib] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", var_wajib] ])
@@ -362,7 +384,7 @@ with tab3:
                 if review_temp["Pengeluaran Pajak Kendaraan Bermotor"].values == 0 :
                     st.markdown(f"- {kode_anomali[11]}. Konfirmasi ulang ke petugas!")
 
-            if review_temp["Jumlah ART dibawah 1 Tahun"].values == "Ada":
+            if review_temp["Jumlah ART dibawah 1 Tahun"].values > 0 :
                 if review_temp["Biaya Melahirkan"].values == 0 :
                     st.markdown(f"- {kode_anomali[12]}. Konfirmasi ulang ke petugas!")
                 if review_temp["Biaya Periksa Kehamilan"].values == 0 :
@@ -373,40 +395,48 @@ with tab3:
                     st.markdown(f"- {kode_anomali[15]}. Konfirmasi ulang ke petugas!")
                 if review_temp["Biaya Barang Lainnya"].values == 0 :
                     st.markdown(f"- {kode_anomali[16]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Jumlah ART Wanita Kawin Usia 10-54 Tahun"].values > 0 :
-                if review_temp["Pengeluaran Keluarga Berencana"].values == 0 :
+                if review_temp["Kereta Bayi"].values == 0 :
                     st.markdown(f"- {kode_anomali[17]}. Konfirmasi ulang ke petugas!")
 
-            if review_temp["Jumlah ART diatas 60 Tahun"].values > 0 :
-                if review_temp["Biaya Pemeliharaan Kesehatan Lainnya"].values == 0 :
+            if review_temp["Jumlah ART dibawah 5 Tahun"].values > 0 :
+                if review_temp["Mainan Anak"].values == 0 :
                     st.markdown(f"- {kode_anomali[18]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Jumlah ART Wanita Kawin Usia 10-54 Tahun"].values > 0 :
+                if review_temp["Barang Kecantikan dan Pembalut Wanita"].values == 0 :
+                    st.markdown(f"- {kode_anomali[19]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Pengeluaran Keluarga Berencana"].values == 0 :
+                    st.markdown(f"- {kode_anomali[20]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Jumlah ART diatas 60 Tahun"].values > 0 or review_temp["Jumlah ART dibawah 1 Tahun"].values > 0 :
+                if review_temp["Biaya Pemeliharaan Kesehatan Lainnya"].values == 0 :
+                    st.markdown(f"- {kode_anomali[21]}. Konfirmasi ulang ke petugas!")
 
             if review_temp["Jumlah ART yang masih sekolah"].values > 0 :
                 if review_temp["Sumbangan Pembangunan Sekolah"].values == 0 :
-                    st.markdown(f"- {kode_anomali[19]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Uang Sekolah dan Iuran Komite"].values == 0 :
-                    st.markdown(f"- {kode_anomali[20]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Iuran Sekolah Lainnya"].values == 0 :
-                    st.markdown(f"- {kode_anomali[21]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Biaya Buku Pelajaran"].values == 0 :
                     st.markdown(f"- {kode_anomali[22]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Alat-alat Tulis"].values == 0 :
+                if review_temp["Uang Sekolah dan Iuran Komite"].values == 0 :
                     st.markdown(f"- {kode_anomali[23]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Uang Kursus di Luar Sekolah"].values == 0 :
+                if review_temp["Iuran Sekolah Lainnya"].values == 0 :
                     st.markdown(f"- {kode_anomali[24]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Biaya Buku Pelajaran"].values == 0 :
+                    st.markdown(f"- {kode_anomali[25]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Alat-alat Tulis"].values == 0 :
+                    st.markdown(f"- {kode_anomali[26]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Uang Kursus di Luar Sekolah"].values == 0 :
+                    st.markdown(f"- {kode_anomali[27]}. Konfirmasi ulang ke petugas!")
 
             if review_temp["Kepemilikan Kendaraan Bermotor"].values == "Tidak ada" :
                 if review_temp["Pengeluaran Transportasi Darat"].values == 0 :
-                    st.markdown(f"- {kode_anomali[25]}. Konfirmasi ulang ke petugas!")
+                    st.markdown(f"- {kode_anomali[28]}. Konfirmasi ulang ke petugas!")
 
             if review_temp["Penerimaan Bantuan Pemerintah"].values == "Ada" :
                 if review_temp["Bantuan Pemerintah dalam bentuk uang"].values == 0 or review_temp["Bantuan Pemerintah dalam bentuk barang"].values == 0 :
-                    st.markdown(f"- {kode_anomali[26]}. Konfirmasi ulang ke petugas!")
+                    st.markdown(f"- {kode_anomali[29]}. Konfirmasi ulang ke petugas!")
 
             for var_wajib in list_var_wajib :
                 if review_temp[var_wajib].values == 0 :
-                    st.markdown(f"- {kode_anomali[27]}. Konfirmasi ulang ke petugas!")
+                    st.markdown(f"- {kode_anomali[30]}. Konfirmasi ulang ke petugas!")
                     break
                 
 with tab4:

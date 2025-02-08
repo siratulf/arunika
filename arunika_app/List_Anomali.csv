@@ -15,15 +15,18 @@ AKP10 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Melahirka
 AKP11 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Periksa Kehamilan
 AKP12 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Imunisasi
 AKP13 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Pakaian Bayi
-AKP14 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Barang Lainnya (Pampers atau Minyak Telon)
-AKP15 Terdapat ART Wanita Kawin Usia 10-54 Tahun akan tetapi tidak ada Pengeluaran Keluarga Berencana
-AKP16 Terdapat ART berusia 60 Tahun keatas akan tetapi tidak ada Biaya Pemeliharaan Kesehatan Lainnya
-AKP17 Terdapat ART yang masih bersekolah akan tetapi tidak ada Sumbangan Pembangunan Sekolah
-AKP18 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Sekolah dan Iuran Komite
-AKP19 Terdapat ART yang masih bersekolah akan tetapi tidak ada Iuran Sekolah Lainnya
-AKP20 Terdapat ART yang masih bersekolah akan tetapi tidak ada Biaya Buku Pelajaran
-AKP21 Terdapat ART yang masih bersekolah akan tetapi tidak ada Alat-alat Tulis
-AKP22 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Kursus di Luar Sekolah
-AKP23 Tidak Memiliki Kendaraan Bermotor akan tetapi tidak ada Pengeluaran Transportasi Darat
-AKP24 Menerima Bantuan Pemerintah akan tetapi rincian Bantuan Pemerintah dalam bentuk uang atau barang tidak terisi
-AKP25 Biaya Wajib ada yang tidak terisi
+AKP14 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Barang Lainnya (Pampers)
+AKP15 Terdapat ART berusia dibawah 1 Tahun akan tetapi tidak ada Kereta Bayi/Stroller (Barang Tahan Lama Lainnya)
+AKP16 Terdapat ART berusia dibawah 5 Tahun akan tetapi tidak ada Pembelian Mainan Anak
+AKP17 Terdapat ART Wanita Kawin Usia 10-54 Tahun akan tetapi tidak ada Pengeluaran Barang Kecantikan dan Pembalut Wanita
+AKP18 Terdapat ART Wanita Kawin Usia 10-54 Tahun akan tetapi tidak ada Pengeluaran Keluarga Berencana
+AKP19 Terdapat ART berusia 60 Tahun keatas atau ART berusia dibawah 1 Tahun akan tetapi tidak ada Biaya Pemeliharaan Kesehatan Lainnya
+AKP20 Terdapat ART yang masih bersekolah akan tetapi tidak ada Sumbangan Pembangunan Sekolah
+AKP21 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Sekolah dan Iuran Komite
+AKP22 Terdapat ART yang masih bersekolah akan tetapi tidak ada Iuran Sekolah Lainnya
+AKP23 Terdapat ART yang masih bersekolah akan tetapi tidak ada Biaya Buku Pelajaran
+AKP24 Terdapat ART yang masih bersekolah akan tetapi tidak ada Alat-alat Tulis
+AKP25 Terdapat ART yang masih bersekolah akan tetapi tidak ada Uang Kursus di Luar Sekolah
+AKP26 Tidak Memiliki Kendaraan Bermotor akan tetapi tidak ada Pengeluaran Transportasi Darat
+AKP27 Menerima Bantuan Pemerintah akan tetapi rincian Bantuan Pemerintah dalam bentuk uang atau barang tidak terisi
+AKP28 Biaya Wajib ada yang tidak terisi
