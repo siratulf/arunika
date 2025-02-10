@@ -201,7 +201,7 @@ with tab2:
             hide_index=True, disabled=["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"])
         hasil_perbaikan = pd.concat([data_terkini, data_edit], ignore_index=True)
         data_perbaikan = hasil_perbaikan.drop_duplicates(subset= ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"], keep= "last")
-    data_perbaikan.to_csv(csv_file_path, index=False)
+        data_perbaikan.to_csv(csv_file_path, index=False)
 
 with tab3:
     #Import dataframe hasil masukan
