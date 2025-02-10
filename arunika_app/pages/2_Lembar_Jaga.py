@@ -367,7 +367,7 @@ with tab3:
             if review_temp["Jumlah Komoditas Non Makanan"].values < 19 :
                 st.markdown(f"- {kode_anomali[4]}. Konfirmasi ulang ke petugas!")
             
-            if review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values < 10 :
+            if review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values < 1.8 or review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values >= 2.8 :
                 st.markdown(f"- {kode_anomali[5]}. Konfirmasi ulang ke petugas!")
             
             if review_temp["Jumlah Konsumsi Gula dalam Ons"].values/review_temp["Jumlah ART"].values > 2.8 :
