@@ -177,6 +177,10 @@ with tab1:
                 data.to_csv(csv_file_path, index=False)
                 st.success("Jawabanmu berhasil dikirim, kamu bisa lakukan review pada menu Review Lembar Jaga ya!")
 
+    st.write("---")
+    st.write("Data Tersimpan :")
+    st.dataframe(data)
+
 with tab2:
     #Import dataframe hasil masukan
     response_data = pd.read_csv("arunika_app/data_input_response.csv")
