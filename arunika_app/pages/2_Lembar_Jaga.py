@@ -309,10 +309,8 @@ with tab2:
 
     #Menerima Bantuan Pemerintah akan tetapi rincian Bantuan Pemerintah dalam bentuk uang atau barang tidak ada
     st.write(kode_anomali[29])
-    if response_data["Penerimaan Bantuan Pemerintah"].values == "Ada" :
-                if response_data["Bantuan Pemerintah dalam bentuk uang"].values == 0 and response_data["Bantuan Pemerintah dalam bentuk barang"].values == 0 :
-                    st.write(response_data.loc[(response_data["Penerimaan Bantuan Pemerintah"] == "Ada") & (response_data["Bantuan Pemerintah dalam bentuk uang"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Penerimaan Bantuan Pemerintah", "Bantuan Pemerintah dalam bentuk uang"] ])
-                    st.write(response_data.loc[(response_data["Penerimaan Bantuan Pemerintah"] == "Ada") & (response_data["Bantuan Pemerintah dalam bentuk barang"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Penerimaan Bantuan Pemerintah", "Bantuan Pemerintah dalam bentuk barang"] ])
+    st.write(response_data.loc[(response_data["Penerimaan Bantuan Pemerintah"] == "Ada") & (response_data["Bantuan Pemerintah dalam bentuk uang"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Penerimaan Bantuan Pemerintah", "Bantuan Pemerintah dalam bentuk uang"] ])
+    st.write(response_data.loc[(response_data["Penerimaan Bantuan Pemerintah"] == "Ada") & (response_data["Bantuan Pemerintah dalam bentuk barang"] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", "Penerimaan Bantuan Pemerintah", "Bantuan Pemerintah dalam bentuk barang"] ])
 
     #Biaya Wajib ada yang tidak terisi
     st.write(kode_anomali[30])
