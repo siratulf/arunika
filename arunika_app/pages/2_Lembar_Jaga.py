@@ -74,7 +74,7 @@ with tab1:
         #Blok IV.1
         st.write("------------------------------------------------------------------------------------")
         st.write("Blok IV.1. Kewajaran Konsumsi Beras, Gula, dan Garam")
-        form_values["Jumlah Beras dalam Kg"] = st.number_input("Blok IV.1 R.2 Jumlah Beras dalam Kg", min_value= 0)
+        form_values["Jumlah Beras dalam Kg"] = st.number_input("Blok IV.1 R.2 Jumlah Beras dalam Kg", min_value= 0.00)
         form_values["Jumlah Konsumsi Gula dalam Ons"] = st.number_input("Blok IV.1 R.160 Jumlah Konsumsi Gula Pasir dalam Ons", min_value= 0.00)
         form_values["Jumlah Konsumsi Garam dalam Gram"] = st.number_input("Blok IV.1 R.168 Jumlah Konsumsi Garam dalam Gram", min_value= 0.00)
 
@@ -368,10 +368,10 @@ with tab3:
             if review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values < 10 :
                 st.markdown(f"- {kode_anomali[5]}. Konfirmasi ulang ke petugas!")
             
-            if review_temp["Jumlah Konsumsi Gula dalam Ons"].values/review_temp["Jumlah ART"].values < 2.8 :
+            if review_temp["Jumlah Konsumsi Gula dalam Ons"].values/review_temp["Jumlah ART"].values > 2.8 :
                 st.markdown(f"- {kode_anomali[6]}. Konfirmasi ulang ke petugas!")
             
-            if review_temp["Jumlah Konsumsi Garam dalam Gram"].values/review_temp["Jumlah ART"].values < 28 :
+            if review_temp["Jumlah Konsumsi Garam dalam Gram"].values/review_temp["Jumlah ART"].values > 28 :
                 st.markdown(f"- {kode_anomali[7]}. Konfirmasi ulang ke petugas!")
 
             if review_temp["Kepemilikan Kendaraan Bermotor"].values == "Ada":
