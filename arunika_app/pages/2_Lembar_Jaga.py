@@ -27,7 +27,7 @@ form_values = {}
 for var in list_var:
     form_values[var] = None
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Entri Lembar Jaga", "Deteksi Anomali", "Review Lembar Jaga", "Dataframe Terkini", "Progres Pemeriksaan"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Entri Lembar Jaga", "Perbaikan Data", "Review Lembar Jaga", "Deteksi Anomali", "Dataframe Terkini", "Progres Pemeriksaan"])
 
 with tab1:
     #Form Pengisian Lembar Jaga
@@ -177,21 +177,167 @@ with tab1:
                 data.to_csv(csv_file_path, index=False)
                 st.success("Jawabanmu berhasil dikirim, kamu bisa lakukan review pada menu Review Lembar Jaga ya!")
 
-    data_tersimpan = pd.read_csv("arunika_app/data_input_response.csv")
     st.write("---")
-    st.write("Data Tersimpan :")
-    st.dataframe(data_tersimpan)
+    st.write("Data Terkini :")
+    data_terkini = pd.read_csv("arunika_app/data_input_response.csv")
+    st.dataframe(data_terkini, hide_index=True)
 
 with tab2:
+    data_edit = pd.read_csv(csv_file_path)
+
+    st.subheader("Perbaikan Data")
+    st.caption("Perbaiki data pada halaman ini dengan memasukkan Nomor Kode Sampel (NKS) pada kotak yang tersedia, lalu lakukan perbaikan pada kolom yang bersesuaian. Jika telah melakukan perbaikan pada kolom yang bersesuaian silakan klik disembarang tempat (tidak perlu dienter), hasil perbaikan akan otomatis tersimpan.")
+
+    query = st.text_input("Masukkan Nomor Kode Sampel (NKS) :")
+
+    if query:
+        mask = data_terkini.map(lambda x: query in str(x)).any(axis=1)
+        data_edit = st.data_editor(data_terkini[mask], column_config={
+            "Tidak Mempunyai NIK" : st.column_config.SelectboxColumn(options=["Ada", "Tidak ada"]),
+            "Buta Huruf" : st.column_config.SelectboxColumn(options=["Ada", "Tidak ada"]),
+            "Kepemilikan Kendaraan Bermotor" : st.column_config.SelectboxColumn(options=["Ada", "Tidak ada"]),
+            "Penerimaan Bantuan Pemerintah" : st.column_config.SelectboxColumn(options=["Ada", "Tidak ada"])
+            },                     
+            hide_index=True, disabled=["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"])
+        hasil_perbaikan = pd.concat([data_terkini, data_edit], ignore_index=True)
+        data_perbaikan = hasil_perbaikan.drop_duplicates(subset= ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"], keep= "last")
+    data_perbaikan.to_csv(csv_file_path, index=False)
+
+with tab3:
     #Import dataframe hasil masukan
-    response_data = pd.read_csv("arunika_app/data_input_response.csv")
+    hasil_input = pd.read_csv(csv_file_path)
+
+    #Import List Kode Anomali
+    kode_anomali = pd.read_csv("arunika_app/List_Anomali.csv", sep="\t")
+    kode_anomali = kode_anomali["Kode Anomali"].to_list()
+
+    #Dictionary filtering variable
+    filter_var = {}
+
+    #Filtering dataframe yang ingin direview
+    with st.form("user_input_review", enter_to_submit= False):
+        filter_var["Nama PML"] = st.selectbox("Nama PML", list_pml, index=None, placeholder= "Pilih salah satu")        
+        filter_var["Nama PPL"] = st.selectbox("Nama PPL", list_ppl, index=None, placeholder= "Pilih salah satu")
+        filter_var["NKS"] = st.selectbox("NKS", list_nks, index=None, placeholder= "Pilih salah satu")
+        filter_var["Nomor Urut Sampel"] = st.selectbox("Nomor Urut Sampel", list_nus, index=None, placeholder= "Pilih salah satu")
+
+        #Kondisi Review button ditekan
+        review_button = st.form_submit_button("Review")
+
+    if review_button:
+        review_temp = hasil_input.loc[(hasil_input["Nama PML"]==filter_var["Nama PML"]) &
+                                    (hasil_input["Nama PPL"]==filter_var["Nama PPL"]) &
+                                    (hasil_input["NKS"]==filter_var["NKS"]) &
+                                    (hasil_input["Nomor Urut Sampel"]==filter_var["Nomor Urut Sampel"])
+                                    ]
+        st.write("Data yang tersimpan :")
+        
+        with st.container(height= 500, border= True):
+            st.write("## Pastikan isian dokumen sudah diperbaiki dan dientri ulang pada menu Entri Lembar Jaga setelah diperbaiki!")
+            st.write("------------------")
+            st.write("Hasil pemeriksaan untuk rumah tangga ini adalah sebagai berikut:")
+
+            #Rule Validasi Pemeriksaan
+
+            if review_temp["Tidak Mempunyai NIK"].values == "Ada" :
+                st.markdown(f"- {kode_anomali[0]}. Konfirmasi ulang ke petugas! Jika benar, berikan penjelasan secara rinci di Blok Catatan.")
+
+            if review_temp["Buta Huruf"].values == "Ada" :
+                st.markdown(f"- {kode_anomali[1]}. Konfirmasi ulang ke petugas! Jika benar, berikan penjelasan secara rinci di Blok Catatan.")
+            
+            if review_temp["Luas Lantai Rumah"].values/review_temp["Jumlah ART"].values < 8 :
+                st.markdown(f"- {kode_anomali[2]}. Konfirmasi ulang ke petugas! Jika benar, berikan penjelasan secara rinci di Blok Catatan.")
+
+            if review_temp["Jumlah Komoditas Makanan"].values < 13 :
+                st.markdown(f"- {kode_anomali[3]}. Konfirmasi ulang ke petugas!")
+            
+            if review_temp["Jumlah Komoditas Non Makanan"].values < 19 :
+                st.markdown(f"- {kode_anomali[4]}. Konfirmasi ulang ke petugas!")
+            
+            if review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values < 1.8 or review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values >= 2.8 :
+                st.markdown(f"- {kode_anomali[5]}. Konfirmasi ulang ke petugas!")
+            
+            if review_temp["Jumlah Konsumsi Gula dalam Ons"].values/review_temp["Jumlah ART"].values > 2.8 :
+                st.markdown(f"- {kode_anomali[6]}. Konfirmasi ulang ke petugas!")
+            
+            if review_temp["Jumlah Konsumsi Garam dalam Gram"].values/review_temp["Jumlah ART"].values > 28 :
+                st.markdown(f"- {kode_anomali[7]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Kepemilikan Kendaraan Bermotor"].values == "Ada":
+                if review_temp["Pengeluaran Bensin dalam Rupiah"].values == 0 or review_temp["Pengeluaran Solar dalam Rupiah"].values == 0 :
+                    st.markdown(f"- {kode_anomali[8]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Pengeluaran Minyak Pelumas dalam Rupiah"].values == 0 :
+                    st.markdown(f"- {kode_anomali[9]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Pengeluaran Perbaikan dan Pemeliharaan Kendaraan Bermotor"].values == 0 :
+                    st.markdown(f"- {kode_anomali[10]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Pengeluaran Pajak Kendaraan Bermotor"].values == 0 :
+                    st.markdown(f"- {kode_anomali[11]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Jumlah ART dibawah 1 Tahun"].values > 0 :
+                if review_temp["Biaya Melahirkan"].values == 0 :
+                    st.markdown(f"- {kode_anomali[12]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Biaya Periksa Kehamilan"].values == 0 :
+                    st.markdown(f"- {kode_anomali[13]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Biaya Imunisasi"].values == 0 :
+                    st.markdown(f"- {kode_anomali[14]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Biaya Pakaian Bayi"].values == 0 :
+                    st.markdown(f"- {kode_anomali[15]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Biaya Barang Lainnya"].values == 0 :
+                    st.markdown(f"- {kode_anomali[16]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Kereta Bayi"].values == 0 :
+                    st.markdown(f"- {kode_anomali[17]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Jumlah ART dibawah 5 Tahun"].values > 0 :
+                if review_temp["Mainan Anak"].values == 0 :
+                    st.markdown(f"- {kode_anomali[18]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Jumlah ART Wanita Kawin Usia 10-54 Tahun"].values > 0 :
+                if review_temp["Barang Kecantikan dan Pembalut Wanita"].values == 0 :
+                    st.markdown(f"- {kode_anomali[19]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Pengeluaran Keluarga Berencana"].values == 0 :
+                    st.markdown(f"- {kode_anomali[20]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Jumlah ART diatas 60 Tahun"].values > 0 or review_temp["Jumlah ART dibawah 1 Tahun"].values > 0 :
+                if review_temp["Biaya Pemeliharaan Kesehatan Lainnya"].values == 0 :
+                    st.markdown(f"- {kode_anomali[21]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Jumlah ART yang masih sekolah"].values > 0 :
+                if review_temp["Sumbangan Pembangunan Sekolah"].values == 0 :
+                    st.markdown(f"- {kode_anomali[22]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Uang Sekolah dan Iuran Komite"].values == 0 :
+                    st.markdown(f"- {kode_anomali[23]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Iuran Sekolah Lainnya"].values == 0 :
+                    st.markdown(f"- {kode_anomali[24]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Biaya Buku Pelajaran"].values == 0 :
+                    st.markdown(f"- {kode_anomali[25]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Alat-alat Tulis"].values == 0 :
+                    st.markdown(f"- {kode_anomali[26]}. Konfirmasi ulang ke petugas!")
+                if review_temp["Uang Kursus di Luar Sekolah"].values == 0 :
+                    st.markdown(f"- {kode_anomali[27]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Kepemilikan Kendaraan Bermotor"].values == "Tidak ada" :
+                if review_temp["Pengeluaran Transportasi Darat"].values == 0 :
+                    st.markdown(f"- {kode_anomali[28]}. Konfirmasi ulang ke petugas!")
+
+            if review_temp["Penerimaan Bantuan Pemerintah"].values == "Ada" :
+                if review_temp["Bantuan Pemerintah dalam bentuk uang"].values == 0 and review_temp["Bantuan Pemerintah dalam bentuk barang"].values == 0 :
+                    st.markdown(f"- {kode_anomali[29]}. Konfirmasi ulang ke petugas!")
+
+            for var_wajib in list_var_wajib :
+                if review_temp[var_wajib].values == 0 :
+                    st.markdown(f"- {kode_anomali[30]}. Konfirmasi ulang ke petugas!")
+                    break
+
+with tab4:
+    #Import dataframe hasil masukan
+    response_data = pd.read_csv(csv_file_path)
 
     #Import List Kode Anomali
     kode_anomali = pd.read_csv("arunika_app/List_Anomali.csv", sep="\t")
     kode_anomali = kode_anomali["Kode Anomali"].to_list()
 
     #Anomali dan Rumah Tangga yang terkait
-    st.subheader("Daftar Anomali dan Hasil Pemeriksaan secara Umum")
+    st.subheader("Daftar Anomali dan Hasil Pemeriksaan Terkini secara Umum")
     st.write("---")
 
     #Ada ART yang tidak mempunyai NIK
@@ -323,130 +469,9 @@ with tab2:
     for var_wajib in list_var_wajib :
         st.write(response_data.loc[(response_data[var_wajib] == 0), ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel", var_wajib] ])
 
-with tab3:
-    #Import dataframe hasil masukan
-    hasil_input = pd.read_csv("arunika_app/data_input_response.csv")
-
-    #Dictionary filtering variable
-    filter_var = {}
-
-    #Filtering dataframe yang ingin direview
-    with st.form("user_input_review", enter_to_submit= False):
-        filter_var["Nama PML"] = st.selectbox("Nama PML", list_pml, index=None, placeholder= "Pilih salah satu")        
-        filter_var["Nama PPL"] = st.selectbox("Nama PPL", list_ppl, index=None, placeholder= "Pilih salah satu")
-        filter_var["NKS"] = st.selectbox("NKS", list_nks, index=None, placeholder= "Pilih salah satu")
-        filter_var["Nomor Urut Sampel"] = st.selectbox("Nomor Urut Sampel", list_nus, index=None, placeholder= "Pilih salah satu")
-
-        #Kondisi Review button ditekan
-        review_button = st.form_submit_button("Review")
-
-    if review_button:
-        review_temp = hasil_input.loc[(hasil_input["Nama PML"]==filter_var["Nama PML"]) &
-                                    (hasil_input["Nama PPL"]==filter_var["Nama PPL"]) &
-                                    (hasil_input["NKS"]==filter_var["NKS"]) &
-                                    (hasil_input["Nomor Urut Sampel"]==filter_var["Nomor Urut Sampel"])
-                                    ]
-        st.write("Data yang tersimpan :")
-        st.write(review_temp)
-        with st.container(height= 500, border= True):
-            st.write("## Pastikan isian dokumen sudah diperbaiki dan dientri ulang pada menu Entri Lembar Jaga setelah diperbaiki!")
-            st.write("------------------")
-            st.write("Hasil pemeriksaan untuk rumah tangga ini adalah sebagai berikut:")
-
-            #Rule Validasi Pemeriksaan
-
-            if review_temp["Tidak Mempunyai NIK"].values == "Ada" :
-                st.markdown(f"- {kode_anomali[0]}. Konfirmasi ulang ke petugas! Jika benar, berikan penjelasan secara rinci di Blok Catatan.")
-
-            if review_temp["Buta Huruf"].values == "Ada" :
-                st.markdown(f"- {kode_anomali[1]}. Konfirmasi ulang ke petugas! Jika benar, berikan penjelasan secara rinci di Blok Catatan.")
-            
-            if review_temp["Luas Lantai Rumah"].values/review_temp["Jumlah ART"].values < 8 :
-                st.markdown(f"- {kode_anomali[2]}. Konfirmasi ulang ke petugas! Jika benar, berikan penjelasan secara rinci di Blok Catatan.")
-
-            if review_temp["Jumlah Komoditas Makanan"].values < 13 :
-                st.markdown(f"- {kode_anomali[3]}. Konfirmasi ulang ke petugas!")
-            
-            if review_temp["Jumlah Komoditas Non Makanan"].values < 19 :
-                st.markdown(f"- {kode_anomali[4]}. Konfirmasi ulang ke petugas!")
-            
-            if review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values < 1.8 or review_temp["Jumlah Beras dalam Kg"].values/review_temp["Jumlah ART"].values >= 2.8 :
-                st.markdown(f"- {kode_anomali[5]}. Konfirmasi ulang ke petugas!")
-            
-            if review_temp["Jumlah Konsumsi Gula dalam Ons"].values/review_temp["Jumlah ART"].values > 2.8 :
-                st.markdown(f"- {kode_anomali[6]}. Konfirmasi ulang ke petugas!")
-            
-            if review_temp["Jumlah Konsumsi Garam dalam Gram"].values/review_temp["Jumlah ART"].values > 28 :
-                st.markdown(f"- {kode_anomali[7]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Kepemilikan Kendaraan Bermotor"].values == "Ada":
-                if review_temp["Pengeluaran Bensin dalam Rupiah"].values == 0 or review_temp["Pengeluaran Solar dalam Rupiah"].values == 0 :
-                    st.markdown(f"- {kode_anomali[8]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Pengeluaran Minyak Pelumas dalam Rupiah"].values == 0 :
-                    st.markdown(f"- {kode_anomali[9]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Pengeluaran Perbaikan dan Pemeliharaan Kendaraan Bermotor"].values == 0 :
-                    st.markdown(f"- {kode_anomali[10]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Pengeluaran Pajak Kendaraan Bermotor"].values == 0 :
-                    st.markdown(f"- {kode_anomali[11]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Jumlah ART dibawah 1 Tahun"].values > 0 :
-                if review_temp["Biaya Melahirkan"].values == 0 :
-                    st.markdown(f"- {kode_anomali[12]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Biaya Periksa Kehamilan"].values == 0 :
-                    st.markdown(f"- {kode_anomali[13]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Biaya Imunisasi"].values == 0 :
-                    st.markdown(f"- {kode_anomali[14]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Biaya Pakaian Bayi"].values == 0 :
-                    st.markdown(f"- {kode_anomali[15]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Biaya Barang Lainnya"].values == 0 :
-                    st.markdown(f"- {kode_anomali[16]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Kereta Bayi"].values == 0 :
-                    st.markdown(f"- {kode_anomali[17]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Jumlah ART dibawah 5 Tahun"].values > 0 :
-                if review_temp["Mainan Anak"].values == 0 :
-                    st.markdown(f"- {kode_anomali[18]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Jumlah ART Wanita Kawin Usia 10-54 Tahun"].values > 0 :
-                if review_temp["Barang Kecantikan dan Pembalut Wanita"].values == 0 :
-                    st.markdown(f"- {kode_anomali[19]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Pengeluaran Keluarga Berencana"].values == 0 :
-                    st.markdown(f"- {kode_anomali[20]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Jumlah ART diatas 60 Tahun"].values > 0 or review_temp["Jumlah ART dibawah 1 Tahun"].values > 0 :
-                if review_temp["Biaya Pemeliharaan Kesehatan Lainnya"].values == 0 :
-                    st.markdown(f"- {kode_anomali[21]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Jumlah ART yang masih sekolah"].values > 0 :
-                if review_temp["Sumbangan Pembangunan Sekolah"].values == 0 :
-                    st.markdown(f"- {kode_anomali[22]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Uang Sekolah dan Iuran Komite"].values == 0 :
-                    st.markdown(f"- {kode_anomali[23]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Iuran Sekolah Lainnya"].values == 0 :
-                    st.markdown(f"- {kode_anomali[24]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Biaya Buku Pelajaran"].values == 0 :
-                    st.markdown(f"- {kode_anomali[25]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Alat-alat Tulis"].values == 0 :
-                    st.markdown(f"- {kode_anomali[26]}. Konfirmasi ulang ke petugas!")
-                if review_temp["Uang Kursus di Luar Sekolah"].values == 0 :
-                    st.markdown(f"- {kode_anomali[27]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Kepemilikan Kendaraan Bermotor"].values == "Tidak ada" :
-                if review_temp["Pengeluaran Transportasi Darat"].values == 0 :
-                    st.markdown(f"- {kode_anomali[28]}. Konfirmasi ulang ke petugas!")
-
-            if review_temp["Penerimaan Bantuan Pemerintah"].values == "Ada" :
-                if review_temp["Bantuan Pemerintah dalam bentuk uang"].values == 0 and review_temp["Bantuan Pemerintah dalam bentuk barang"].values == 0 :
-                    st.markdown(f"- {kode_anomali[29]}. Konfirmasi ulang ke petugas!")
-
-            for var_wajib in list_var_wajib :
-                if review_temp[var_wajib].values == 0 :
-                    st.markdown(f"- {kode_anomali[30]}. Konfirmasi ulang ke petugas!")
-                    break
-                
-with tab4:
+with tab5:
     #Metriks Dataframe
-    data_input = pd.read_csv("arunika_app/data_input_response.csv")
+    data_input = pd.read_csv(csv_file_path)
     st.subheader("Ringkasan Deskriptif :bar_chart:")
 
     #Kolom Metrik
@@ -472,9 +497,9 @@ with tab4:
 
     st.write("---")
     st.subheader("Data Terkini:")
-    st.dataframe(data_input)
-
-with tab5:
+    st.dataframe(data_input, hide_index=True)
+                
+with tab6:
     st.title("Progres Pemeriksaan Dokumen :bar_chart:")
     st.write("---")
     
