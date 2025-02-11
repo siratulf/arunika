@@ -1,0 +1,213 @@
+nama_kelompok_komoditas;nama_komoditas;satuan_standar;harga_minimal;harga_maksimal;satuan_lokal;konversi_satuan
+A. PADI-PADIAN;Beras (beras lokal, kualitas unggul, impor);Kg;9000;19000;Kg;1
+A. PADI-PADIAN;Beras (beras lokal, kualitas unggul, impor);Kg;9000;19000;Kulak;3.2
+A. PADI-PADIAN;Beras (beras lokal, kualitas unggul, impor);Kg;9000;19000;Canting;0.27
+A. PADI-PADIAN;Beras (beras lokal, kualitas unggul, impor);Kg;9000;19000;Cup Magicjar;0.13
+A. PADI-PADIAN;Beras (beras lokal, kualitas unggul, impor);Kg;9000;19000;Pikul;64
+A. PADI-PADIAN;Beras (beras lokal, kualitas unggul, impor);Kg;9000;19000;Kaleng;16
+A. PADI-PADIAN;Beras ketan;Kg;10000;35000;Kg;1
+A. PADI-PADIAN;Jagung basah degan kulit;Kg;1000;7000;Jagung tanpa kulit;1.45
+A. PADI-PADIAN;Jagung pipilan/beras jagung/jagung titi;Kg;4000;12000;Kg;1
+A. PADI-PADIAN;Tepung terigu;Kg;7000;18000;Kg;1
+A. PADI-PADIAN;Padi-padian lainnya;Kg;5000;32000;Kg;1
+B. UMBI-UMBIAN;Ketela pohon/singkong;Kg;1000;4000;Kg;1
+B. UMBI-UMBIAN;Ketela rambat/ubi jalar;Kg;2500;10000;Kg;1
+B. UMBI-UMBIAN;Sagu (bukan dari ketela pohon);Kg;3000;20000;Kg;1
+B. UMBI-UMBIAN;Talas/keladi;Kg;2500;15000;Kg;1
+B. UMBI-UMBIAN;Kentang;Kg;10000;20000;Kg;1
+B. UMBI-UMBIAN;Gaplek;Kg;3000;15000;Kg;1
+B. UMBI-UMBIAN;Umbi-umbian lainnya;Kg;2500;20000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Ekor kuning;Kg;40000;85000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Tongkol;Kg;20000;55000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Tuna;Kg;25000;65000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Cakalang, dencis;Kg;20000;45000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Tenggiri;Kg;25000;75000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Selar;Kg;20000;50000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Kembung, lema/tatare, banyar/banyara;Kg;20000;70000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Teri basah;Kg;20000;40000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Bandeng;Kg;25000;55000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Gabus;Kg;25000;100000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Mujair;Kg;25000;35000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Mas;Kg;25000;50000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Nila;Kg;25000;35000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Lele;Kg;25000;35000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Kakap;Kg;40000;125000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Baronang;Kg;30000;100000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Patin;Kg;25000;40000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Bawal;Kg;30000;50000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Gurame;Kg;30000;70000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Ikan segar/basah lainnya;Kg;10000;150000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Udang, lobster;Kg;40000;200000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Udang, lobster;Kg;40000;200000;Gelas Belimbing (Udang Kasut) ;0.25
+C. IKAN/UDANG/CUMI/KERANG;Cumi-cumi, sotong, gurita;Kg;60000;120000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Ketam, kepiting, rajungan;Kg;5000;50000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Kerang, siput, bekicot, remis;Kg;5000;100000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Udang dan hewan air lainnya yang segar lainnya;Kg;5000;100000;Kg;1
+C. IKAN/UDANG/CUMI/KERANG;Kembung diawetkan/peda;Ons;4000;30000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Tenggiri diawetkan;Ons;3000;10000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Tongkol/tuna/cakalang diawetkan;Ons;4000;30000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Teri diawetkan;Ons;5000;20000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Selar diawetkan;Ons;4000;10000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Sepat diawetkan;Ons;3000;50000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Bandeng diawetkan;Ons;3500;10000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Gabus diawetkan;Ons;5000;120000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Ikan dalam kalengtuna dalam kaleng, dsb);Ons;5000;15000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Ikan dalam kalengtuna dalam kaleng, dsb);Ons;5000;15000;Kaleng  Sarden Kecil;1.55
+C. IKAN/UDANG/CUMI/KERANG;Ikan diawetkan lainnya;Ons;4000;15000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Udang diawetkan (ebi, rebon);Ons;5000;30000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Cumi-cumi, sotong, gurita diawetkan;Ons;5000;30000;Ons;1
+C. IKAN/UDANG/CUMI/KERANG;Udang dan hewan air lainnya yang diawetkan;Ons;3000;15000;Ons;1
+D. DAGING;Daging sapi;Kg;80000;160000;Kg;1
+D. DAGING;Daging kambing, domba/biri-biri;Kg;50000;125000;Kg;1
+D. DAGING;Daging babi;Kg;20000;95000;Kg;1
+D. DAGING;Daging ayam ras;Kg;30000;40000;Kg;1
+D. DAGING;Daging ayam kampung;Kg;40000;100000;Kg;1
+D. DAGING;Daging segar lainnya;Kg;40000;170000;Kg;1
+D. DAGING;Daging diawetkan lainnya;Kg;40000;200000;Kg;1
+D. DAGING;Tetelan, sandung lamur;Kg;10000;100000;Kg;1
+D. DAGING;Lainnya (hati, jeroan, iga, kaki, buntut, kepala,;Kg;12000;150000;Kg;1
+E. TELUR DAN SUSU;Telur ayam ras;Butir;1250;3000;Butir;1
+E. TELUR DAN SUSU;Telur ayam ras;Butir;1250;3000;Karpet;30
+E. TELUR DAN SUSU;Telur ayam kampung;Butir;1500;5000;Butir;1
+E. TELUR DAN SUSU;Telur ayam kampung;Butir;1500;5000;Karpet;30
+E. TELUR DAN SUSU;Telur itik/telur itik manila;Butir;2000;6000;Butir;1
+E. TELUR DAN SUSU;Telur itik/telur itik manila;Butir;2000;6000;Karpet;30
+E. TELUR DAN SUSU;Telur lainnya (telur puyuh, telur asin mentah maup;Butir;300;10000;Butir;1
+E. TELUR DAN SUSU;Telur lainnya (telur puyuh, telur asin mentah maup;Butir;300;10000;Karpet;30
+E. TELUR DAN SUSU;Susu cair pabrik;Kotak Kecil;2000;10000;Kotak Kecil;1
+E. TELUR DAN SUSU;Susu kental manis;Kaleng;8000;20000;Kaleng;1
+E. TELUR DAN SUSU;Susu kental manis;Kaleng;8000;20000;Sachet;0.11
+E. TELUR DAN SUSU;Susu bubuk;Kg;43000;300000;Kg;1
+E. TELUR DAN SUSU;Susu bubuk bayi;Kg;60000;450000;Kg;1
+E. TELUR DAN SUSU;Susu lainnya dan hasil lain dari susu;;1000;20000;;
+F. SAYUR-SAYURAN;Bayam;Kg;6000;15000;Kg;1
+F. SAYUR-SAYURAN;Bayam;Kg;6000;15000;Ikat Bayam cabut;0.33
+F. SAYUR-SAYURAN;Bayam;Kg;6000;15000;Ikat Bayam Dusun ;0.5
+F. SAYUR-SAYURAN;Kangkung;Kg;3000;12000;Kg;1
+F. SAYUR-SAYURAN;Kangkung;Kg;3000;12000;Ikat Kangkung  (Sudah dipotong bagian bawah);0.22
+F. SAYUR-SAYURAN;Kangkung;Kg;3000;12000;Ikat Kangkung Utuh;0.5
+F. SAYUR-SAYURAN;Kol/kubis;Kg;4000;12000;Kg;1
+F. SAYUR-SAYURAN;Sawi putih (petsai);Kg;6000;11000;Kg;1
+F. SAYUR-SAYURAN;Sawi hijau;Kg;6000;12000;Kg;1
+F. SAYUR-SAYURAN;Buncis;Kg;6000;20000;Kg;1
+F. SAYUR-SAYURAN;Kacang panjang;Kg;3000;15000;Kg;1
+F. SAYUR-SAYURAN;Kacang panjang;Kg;3000;15000;Ikat;0.3
+F. SAYUR-SAYURAN;Tomat sayur, tomat ceri;Kg;3000;20000;Kg;1
+F. SAYUR-SAYURAN;Wortel;Kg;4000;20000;Kg;1
+F. SAYUR-SAYURAN;Mentimun;Kg;1000;15000;Kg;1
+F. SAYUR-SAYURAN;Daun ketela pohon/daun singkong;Kg;1000;10000;Kg;1
+F. SAYUR-SAYURAN;Daun ketela pohon/daun singkong;Kg;1000;10000;Ikat;0.6
+F. SAYUR-SAYURAN;Terong;Kg;3000;20000;Kg;1
+F. SAYUR-SAYURAN;Tauge;Kg;15000;30000;Kg;1
+F. SAYUR-SAYURAN;Labu, labu siam, labu parang;Kg;5000;15000;Kg;1
+F. SAYUR-SAYURAN;Bahan sayur sop/capcay/ kimlo (paket);Bungkus;3000;10000;Bungkus;1
+F. SAYUR-SAYURAN;Bahan sayur asam/lodeh (paket);Bungkus;3000;10000;Bungkus;1
+F. SAYUR-SAYURAN;Nangka muda;Kg;3000;20000;Kg;1
+F. SAYUR-SAYURAN;Pepaya muda;Kg;1000;10000;Kg;1
+F. SAYUR-SAYURAN;Jengkol;Kg;15000;25000;Kg;1
+F. SAYUR-SAYURAN;Bawang merah;Ons;2000;5000;Ons;1
+F. SAYUR-SAYURAN;Bawang putih;Ons;2000;5000;Ons;1
+F. SAYUR-SAYURAN;Bawang bombay;Ons;2000;7000;Ons;1
+F. SAYUR-SAYURAN;Cabe merah;Kg;40000;70000;Kg;1
+F. SAYUR-SAYURAN;Cabe hijau;Kg;15000;50000;Kg;1
+F. SAYUR-SAYURAN;Cabe rawit;Kg;30000;100000;Kg;1
+F. SAYUR-SAYURAN;Cabe rawit;Kg;30000;100000;Pan;0.2
+F. SAYUR-SAYURAN;Sayur-sayuran lainnya;Kg;4000;20000;Kg;1
+G. KACANG-KACANGAN;Kacang tanah tanpa kulit;Kg;15000;40000;Kg;1
+G. KACANG-KACANGAN;Kacang kedelai;Kg;5000;26000;Kg;1
+G. KACANG-KACANGAN;Kacang lainnya;Kg;5000;35000;Kg;1
+G. KACANG-KACANGAN;Tahu;Kg;7000;20000;1 Cumpuk (Isi 8 potong);0.8
+G. KACANG-KACANGAN;Tempe;Kg;8000;20000;1 Bungkus Plastik;0.33
+G. KACANG-KACANGAN;Oncom;Ons;1000;10000;Ons;1
+G. KACANG-KACANGAN;Hasil lain dari kacang-kacangan;Ons;1500;25000;Ons;1
+H. BUAH-BUAHAN;Jeruk, jeruk bali;Kg;6000;20000;Kg;1
+H. BUAH-BUAHAN;Mangga;Kg;1000;40000;Kg;1
+H. BUAH-BUAHAN;Apel;Kg;25000;100000;Kg;1
+H. BUAH-BUAHAN;Rambutan;Kg;10000;20000;Kg;1
+H. BUAH-BUAHAN;Duku, langsat;Kg;8000;40000;Kg;1
+H. BUAH-BUAHAN;Durian;Kg;10000;57000;Kg;1
+H. BUAH-BUAHAN;Durian;Kg;10000;57000;Buah Durian dengan kulit ;0.36
+H. BUAH-BUAHAN;Salak;Kg;5000;20000;Kg;1
+H. BUAH-BUAHAN;Pisang ambon;Kg;3000;18000;Kg;1
+H. BUAH-BUAHAN;Pisang lainnya;Kg;3000;12000;Kg;1
+H. BUAH-BUAHAN;Pepaya;Kg;2000;15000;Kg;1
+H. BUAH-BUAHAN;Semangka;Kg;4000;15000;Kg;1
+H. BUAH-BUAHAN;Tomat buah;Kg;3000;20000;Kg;1
+H. BUAH-BUAHAN;Alpokat;Kg;10000;25000;Kg;1
+H. BUAH-BUAHAN;Jambu Biji;Kg;5000;25000;Kg;1
+H. BUAH-BUAHAN;Buah-buahan lainnya;Kg;5000;150000;Kg;1
+H. BUAH-BUAHAN;Buah-buahan lainnya (Nangka Masak);Kg;;;Kg;1
+H. BUAH-BUAHAN;Buah-buahan lainnya (Nangka Masak);Kg;;;Potong;1.8
+I. MINYAK DAN KELAPA;Minyak kelapa;Liter;20000;40000;Liter;1
+I. MINYAK DAN KELAPA;Minyak goreng (kelapa sawit, bunga matahari);Liter;14000;25000;Liter;1
+I. MINYAK DAN KELAPA;Kelapa;Butir;1000;6000;Butir;1
+I. MINYAK DAN KELAPA;Minyak dan kelapa lainnya;;10;20000;;1
+J. BAHAN MINUMAN;Gula pasir;Ons;1400;10000;Ons;1
+J. BAHAN MINUMAN;Gula pasir;Ons;1400;10000;1 Sendok Teh ;0.057
+J. BAHAN MINUMAN;Gula pasir;Ons;1400;10000;1 Sendok Makan ;0.114
+J. BAHAN MINUMAN;Gula merah, gula air (pohon aren, kelapa, lontar);Ons;1500;30000;Ons;1
+J. BAHAN MINUMAN;Teh bubuk;Ons;80;10000;Ons;1
+J. BAHAN MINUMAN;Teh celup (sachet);2 gr;200;2500;2 gr;1
+J. BAHAN MINUMAN;Kopi (bubuk, biji);Ons;850;15000;Ons;1
+J. BAHAN MINUMAN;Kopi instan (sachet);20 gr;1000;3500;20 gr;1
+J. BAHAN MINUMAN;Bahan minuman lainnya;;1000;10000;;1
+K. BUMBU-BUMBUAN;Garam;Gram;5;1300;Gram;1
+K. BUMBU-BUMBUAN;Garam;Gram;5;1300;Sendok Teh ;4.8
+K. BUMBU-BUMBUAN;Kemiri;Gram;40;100;Gram;1
+K. BUMBU-BUMBUAN;Ketumbar/jinten;Gram;30;800;Gram;1
+K. BUMBU-BUMBUAN;Merica/lada;Gram;50;2200;Gram;1
+K. BUMBU-BUMBUAN;Merica/lada;Gram;50;2200;Sendok Teh ;3.7
+K. BUMBU-BUMBUAN;Merica/lada;Gram;50;2200;Sachet Ladaku 1000an;4
+K. BUMBU-BUMBUAN;Jahe;Gram;20;6000;Gram;1
+K. BUMBU-BUMBUAN;Kunyit;Gram;5;3000;Gram;1
+K. BUMBU-BUMBUAN;Kunyit;Gram;5;3000;1 Ruas Jari;3.5
+K. BUMBU-BUMBUAN;Kunyit;Gram;5;3000;2 Ruas Jari;9.3
+K. BUMBU-BUMBUAN;Asam;Gram;10;300;Gram;1
+K. BUMBU-BUMBUAN;Terasi/petis;Gram;50;2000;Gram;1
+K. BUMBU-BUMBUAN;Kecap;100 ml;5000;12000;100 ml;1
+K. BUMBU-BUMBUAN;Penyedap masakan/vetsin;Gram;40;110;Gram;1
+K. BUMBU-BUMBUAN;Sambal jadi;100 ml;5000;15000;100 ml;1
+K. BUMBU-BUMBUAN;Saus tomat;100 ml;3000;10000;100 ml;1
+K. BUMBU-BUMBUAN;Bumbu maskan jadi/kemasan, bumbu racikan;Gram;100;3000;Gram;1
+K. BUMBU-BUMBUAN;Bumbu dapur lainnya (kencur, pala, kapulaga, dsb);Gram;25;3000;Gram;1
+L. BAHAN MAKANAN LAINNYA;Mie instan;Bungkus;1000;5500;Bungkus;1
+L. BAHAN MAKANAN LAINNYA;Kerupuk;Ons;150;10000;Ons;1
+L. BAHAN MAKANAN LAINNYA;Bubur bayi kemasan;Kotak kecil;3000;20000;Kotak kecil;1
+L. BAHAN MAKANAN LAINNYA;Lainnya;;1000;20000;;1
+M. MAKANAN DAN MINUMAN JADI;Roti tawar;Potong;500;6000;Potong;1
+M. MAKANAN DAN MINUMAN JADI;Roti manis, roti lainnya;Potong;300;10000;Potong;1
+M. MAKANAN DAN MINUMAN JADI;Kue kering, biskuit, semprong;Ons;300;15000;Ons;1
+M. MAKANAN DAN MINUMAN JADI;Kue basah (kue lapis, bika ambon, lemper, dsb);Buah;500;5000;Buah;1
+M. MAKANAN DAN MINUMAN JADI;Makanan gorengan (tahu, tempe, bakwan, pisang);Potong;700;2000;Potong;1
+M. MAKANAN DAN MINUMAN JADI;Makanan gorengan;Potong;500;2500;Potong;1
+M. MAKANAN DAN MINUMAN JADI;Bubur kacang hijau;Porsi;2000;10000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Gado-gado, ketoprak, pecel;Porsi;5000;15000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Nasi campur/rames;Porsi;5000;25000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Nasi goreng;Porsi;5000;25000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Nasi putih;Porsi;3000;10000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Lontong/ketupat sayur;Porsi;5000;15000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Soto, gule, sop, rawon, cincang;Porsi;5000;20000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Sayur matang (ditumis, disantan, dsb);Porsi;5000;15000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Sate, tongseng;Porsi;5000;25000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Mie bakso, mie rebus, mie goreng;Porsi;5000;25000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Mie instan;Porsi;5000;15000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Makanan ringan anak-anak, krupuk/kripik;Ons;2000;200000;Ons;1
+M. MAKANAN DAN MINUMAN JADI;Ikan matang;Potong;5000;25000;Potong;1
+M. MAKANAN DAN MINUMAN JADI;Ayam/daging matang (ayam goreng, rendang, dsb);Potong;5000;25000;Potong;1
+M. MAKANAN DAN MINUMAN JADI;Daging olahan matang (sosis. nugget, daging asap,);Potong;1000;60000;Potong;1
+M. MAKANAN DAN MINUMAN JADI;Bubur ayam;Porsi;5000;25000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Siomay, batagor;Porsi;2500;15000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Makanan jadi lainnya;;2000;25000;;1
+M. MAKANAN DAN MINUMAN JADI;Air kemasan;Liter;2000;10000;Liter;1
+M. MAKANAN DAN MINUMAN JADI;Air kemasan galon;Galon;3000;55000;Galon;1
+M. MAKANAN DAN MINUMAN JADI;Air teh kemasan;250 ml;1000;10000;250 ml;1
+M. MAKANAN DAN MINUMAN JADI;Sari buah kemasan;200 ml;1000;12000;200 ml;1
+M. MAKANAN DAN MINUMAN JADI;Minuman jadi (kopi, kopi susu, teh, susu coklat, d;Gelas;1000;10000;Gelas;1
+M. MAKANAN DAN MINUMAN JADI;Es krim;Mangkok Kecil;2000;20000;Mangkok Kecil;1
+M. MAKANAN DAN MINUMAN JADI;Es lainnya;Porsi;500;15000;Porsi;1
+M. MAKANAN DAN MINUMAN JADI;Minuman keras lainnya;Liter;5000;100000;Liter;1
+N. ROKOK DAN TEMBAKAU;Rokok kretek filter;Batang;500;4000;Batang;1
+N. ROKOK DAN TEMBAKAU;Rokok kretek tanpa filter;Batang;400;2500;Batang;1
+N. ROKOK DAN TEMBAKAU;Rokok putih;Batang;1000;5000;Batang;1
+N. ROKOK DAN TEMBAKAU;Tembakau;Ons;3000;30000;Ons;1
+N. ROKOK DAN TEMBAKAU;Rokok dan tembakau lainnya;;1000;30000;;1

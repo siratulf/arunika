@@ -186,9 +186,25 @@ with tab2:
     data_edit = pd.read_csv(csv_file_path)
 
     st.subheader("Perbaikan Data")
-    st.caption("Perbaiki data pada halaman ini dengan memasukkan Nomor Kode Sampel (NKS) pada kotak yang tersedia, lalu lakukan perbaikan pada kolom yang bersesuaian. Jika telah melakukan perbaikan pada kolom yang bersesuaian silakan klik disembarang tempat (tidak perlu dienter), hasil perbaikan akan otomatis tersimpan.")
+    st.caption("1. Halaman ini khusus untuk Pemeriksa!")
+    st.caption("2. Masukkan Kode Akses Pemeriksa dengan benar. Maka akses kotak filter Nomor Kode Sampel akan terbuka.")
+    st.caption("3. Lakukan perbaikan pada kolom yang bersesuaian. Perhatian! Saat melakukan perbaikan terkadang perlu dua kali input, mohon untuk diperiksa kembali setelah diperbaiki.")
 
-    query = st.text_input("Masukkan Nomor Kode Sampel (NKS) :")
+    with st.form("Kode Akses Pemeriksa", enter_to_submit= False, clear_on_submit= False):
+        userID_key = st.text_input("Masukkan UserID", key="username")
+        password_key = st.text_input("Masukkan Password", key="password")
+
+        login_button = st.form_submit_button("Login")
+    
+    closed_access = True
+    if login_button:
+        if userID_key == "admin_arunika" and password_key == "lakukanperbaikan":
+            closed_access = False
+            st.success("Silakan lakukan perbaikan data!")
+        else:
+            st.warning("UserID dan/atau Password salah!")
+    
+    query = st.text_input("Masukkan Nomor Kode Sampel (NKS) :", disabled=closed_access)
 
     if query:
         mask = data_terkini.map(lambda x: query in str(x)).any(axis=1)
