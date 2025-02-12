@@ -67,12 +67,22 @@ with tab2:
 
         listrik_terpilih = listrik_df[(listrik_df["daya_terpasang"]==daya_terpasang)]
 
-        harga_listrik = listrik_terpilih["harga_per_kwh"].iloc[0]
+        harga_diskon = listrik_terpilih["harga_per_kwh"].iloc[0]
+        harga_normal = listrik_terpilih["harga_normal"].iloc[0]
+        biaya_maks_diskon = listrik_terpilih["biaya_maks_diskon"].iloc[0]
+        kwh_maks_diskon = listrik_terpilih["batas_maks_kwh"].iloc[0]
 
         biaya_listrik = st.number_input("Masukkan Biaya Listrik Sebulan", min_value=0)
 
-        listrik_kwh = round((biaya_listrik / harga_listrik),2)
+        if biaya_listrik > biaya_maks_diskon :
+            biaya_normal = biaya_listrik - biaya_maks_diskon
+            kwh_normal = round((biaya_normal / harga_normal),2)
+            listrik_kwh = kwh_normal + kwh_maks_diskon
+        else:
+            listrik_kwh = round((biaya_listrik / harga_diskon),2)
+        
         st.metric("Pemakaian Listrik dalam kWh Sebulan Terakhir", value=f"{listrik_kwh:,.1f} kWh", border=True)
+        
     
     with st.expander("Daftar Harga Keluarga Berencana (KB)"):
 
