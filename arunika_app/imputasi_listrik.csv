@@ -1,5 +1,5 @@
-daya_terpasang;batas_maks_kwh;harga_per_kwh
-450;324;207.5
-900;648;324
-1300;936;676
-2200;1584;722.35
+daya_terpasang;batas_maks_kwh;harga_per_kwh;harga_normal;biaya_maks_diskon
+450;324;207.5;415;67230
+900;648;324;648;209952
+1300;936;676;1352;632736
+2200;1584;722.35;1444.7;1144202.4
