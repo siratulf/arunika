@@ -138,7 +138,6 @@ H. BUAH-BUAHAN;Buah-buahan lainnya;Kg;5000;150000;Kg;1
 I. MINYAK DAN KELAPA;Minyak kelapa;Liter;20000;40000;Liter;1
 I. MINYAK DAN KELAPA;Minyak goreng (kelapa sawit, bunga matahari);Liter;14000;25000;Liter;1
 I. MINYAK DAN KELAPA;Kelapa;Butir;1000;6000;Butir;1
-I. MINYAK DAN KELAPA;Minyak dan kelapa lainnya;;10;20000;;1
 J. BAHAN MINUMAN;Gula pasir;Ons;1400;10000;Ons;1
 J. BAHAN MINUMAN;Gula pasir;Ons;1400;10000;1 Sendok Teh ;0.057
 J. BAHAN MINUMAN;Gula pasir;Ons;1400;10000;1 Sendok Makan ;0.114
@@ -192,7 +191,6 @@ M. MAKANAN DAN MINUMAN JADI;Ayam/daging matang (ayam goreng, rendang, dsb);Poton
 M. MAKANAN DAN MINUMAN JADI;Daging olahan matang (sosis. nugget, daging asap,);Potong;1000;60000;Potong;1
 M. MAKANAN DAN MINUMAN JADI;Bubur ayam;Porsi;5000;25000;Porsi;1
 M. MAKANAN DAN MINUMAN JADI;Siomay, batagor;Porsi;2500;15000;Porsi;1
-M. MAKANAN DAN MINUMAN JADI;Makanan jadi lainnya;;2000;25000;;1
 M. MAKANAN DAN MINUMAN JADI;Air kemasan;Liter;2000;10000;Liter;1
 M. MAKANAN DAN MINUMAN JADI;Air kemasan galon;Galon;3000;55000;Galon;1
 M. MAKANAN DAN MINUMAN JADI;Air teh kemasan;250 ml;1000;10000;250 ml;1
