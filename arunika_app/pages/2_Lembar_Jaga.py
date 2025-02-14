@@ -31,7 +31,7 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Entri Lembar Jaga", "Perbaikan Da
 
 with tab1:
     #Form Pengisian Lembar Jaga
-    with st.form("user_input_form", enter_to_submit= True, clear_on_submit= True):
+    with st.form("user_input_form", enter_to_submit= False, clear_on_submit= False):
         st.write("Masukkan Isian sesuai Lembar Jaga:")
         st.caption("Untuk desimal menggunakan titik bukan koma")
         st.write("")
