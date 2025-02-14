@@ -79,7 +79,6 @@ E. TELUR DAN SUSU;Susu kental manis;Kaleng;8000;20000;Kaleng;1
 E. TELUR DAN SUSU;Susu kental manis;Kaleng;8000;20000;Sachet;0.11
 E. TELUR DAN SUSU;Susu bubuk;Kg;43000;300000;Kg;1
 E. TELUR DAN SUSU;Susu bubuk bayi;Kg;60000;450000;Kg;1
-E. TELUR DAN SUSU;Susu lainnya dan hasil lain dari susu;;1000;20000;;
 F. SAYUR-SAYURAN;Bayam;Kg;6000;15000;Kg;1
 F. SAYUR-SAYURAN;Bayam;Kg;6000;15000;Ikat Bayam cabut;0.33
 F. SAYUR-SAYURAN;Bayam;Kg;6000;15000;Ikat Bayam Dusun ;0.5
@@ -136,8 +135,6 @@ H. BUAH-BUAHAN;Tomat buah;Kg;3000;20000;Kg;1
 H. BUAH-BUAHAN;Alpokat;Kg;10000;25000;Kg;1
 H. BUAH-BUAHAN;Jambu Biji;Kg;5000;25000;Kg;1
 H. BUAH-BUAHAN;Buah-buahan lainnya;Kg;5000;150000;Kg;1
-H. BUAH-BUAHAN;Buah-buahan lainnya (Nangka Masak);Kg;;;Kg;1
-H. BUAH-BUAHAN;Buah-buahan lainnya (Nangka Masak);Kg;;;Potong;1.8
 I. MINYAK DAN KELAPA;Minyak kelapa;Liter;20000;40000;Liter;1
 I. MINYAK DAN KELAPA;Minyak goreng (kelapa sawit, bunga matahari);Liter;14000;25000;Liter;1
 I. MINYAK DAN KELAPA;Kelapa;Butir;1000;6000;Butir;1
@@ -150,7 +147,6 @@ J. BAHAN MINUMAN;Teh bubuk;Ons;80;10000;Ons;1
 J. BAHAN MINUMAN;Teh celup (sachet);2 gr;200;2500;2 gr;1
 J. BAHAN MINUMAN;Kopi (bubuk, biji);Ons;850;15000;Ons;1
 J. BAHAN MINUMAN;Kopi instan (sachet);20 gr;1000;3500;20 gr;1
-J. BAHAN MINUMAN;Bahan minuman lainnya;;1000;10000;;1
 K. BUMBU-BUMBUAN;Garam;Gram;5;1300;Gram;1
 K. BUMBU-BUMBUAN;Garam;Gram;5;1300;Sendok Teh ;4.8
 K. BUMBU-BUMBUAN;Kemiri;Gram;40;100;Gram;1
@@ -173,7 +169,6 @@ K. BUMBU-BUMBUAN;Bumbu dapur lainnya (kencur, pala, kapulaga, dsb);Gram;25;3000;
 L. BAHAN MAKANAN LAINNYA;Mie instan;Bungkus;1000;5500;Bungkus;1
 L. BAHAN MAKANAN LAINNYA;Kerupuk;Ons;150;10000;Ons;1
 L. BAHAN MAKANAN LAINNYA;Bubur bayi kemasan;Kotak kecil;3000;20000;Kotak kecil;1
-L. BAHAN MAKANAN LAINNYA;Lainnya;;1000;20000;;1
 M. MAKANAN DAN MINUMAN JADI;Roti tawar;Potong;500;6000;Potong;1
 M. MAKANAN DAN MINUMAN JADI;Roti manis, roti lainnya;Potong;300;10000;Potong;1
 M. MAKANAN DAN MINUMAN JADI;Kue kering, biskuit, semprong;Ons;300;15000;Ons;1
@@ -202,7 +197,7 @@ M. MAKANAN DAN MINUMAN JADI;Air kemasan;Liter;2000;10000;Liter;1
 M. MAKANAN DAN MINUMAN JADI;Air kemasan galon;Galon;3000;55000;Galon;1
 M. MAKANAN DAN MINUMAN JADI;Air teh kemasan;250 ml;1000;10000;250 ml;1
 M. MAKANAN DAN MINUMAN JADI;Sari buah kemasan;200 ml;1000;12000;200 ml;1
-M. MAKANAN DAN MINUMAN JADI;Minuman jadi (kopi, kopi susu, teh, susu coklat, d;Gelas;1000;10000;Gelas;1
+M. MAKANAN DAN MINUMAN JADI;Minuman jadi (kopi, kopi susu, teh, susu coklat);Gelas;1000;10000;Gelas;1
 M. MAKANAN DAN MINUMAN JADI;Es krim;Mangkok Kecil;2000;20000;Mangkok Kecil;1
 M. MAKANAN DAN MINUMAN JADI;Es lainnya;Porsi;500;15000;Porsi;1
 M. MAKANAN DAN MINUMAN JADI;Minuman keras lainnya;Liter;5000;100000;Liter;1
@@ -210,4 +205,3 @@ N. ROKOK DAN TEMBAKAU;Rokok kretek filter;Batang;500;4000;Batang;1
 N. ROKOK DAN TEMBAKAU;Rokok kretek tanpa filter;Batang;400;2500;Batang;1
 N. ROKOK DAN TEMBAKAU;Rokok putih;Batang;1000;5000;Batang;1
 N. ROKOK DAN TEMBAKAU;Tembakau;Ons;3000;30000;Ons;1
-N. ROKOK DAN TEMBAKAU;Rokok dan tembakau lainnya;;1000;30000;;1
