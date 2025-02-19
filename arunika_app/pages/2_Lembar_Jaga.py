@@ -55,8 +55,8 @@ with tab1:
         form_values["Jumlah ART dibawah 5 Tahun"] = st.number_input("R.407 Jumlah ART dibawah 5 Tahun", min_value=0)      
         form_values["Jumlah ART dibawah 1 Tahun"] = st.number_input("R.407 Jumlah ART dibawah 1 Tahun", min_value= 0)
         form_values["Tidak Mempunyai NIK"] = st.selectbox("R.505 Apakah ada ART yang tidak memiliki NIK atau berkode 5?", ["Ada", "Tidak ada"], placeholder="Pilih salah satu")
-        form_values["Jumlah ART yang masih sekolah"] = st.number_input("R.605 berkode 1 dan R.611 berkode 2 Jumlah ART yang masih sekolah", min_value= 0)
-        form_values["Buta Huruf"] = st.selectbox("R.608-610 Apakah ada ART yang berkode 5 untuk tiga rincian pertanyaan ini?", ["Ada", "Tidak ada"], placeholder="Pilih salah satu")
+        form_values["Jumlah ART yang masih sekolah"] = st.number_input("R.605 berkode 1 atau R.611 berkode 2 Jumlah ART yang masih sekolah", min_value= 0)
+        form_values["Buta Huruf"] = st.selectbox("R.608 kode 5 DAN R.609 kode 5 DAN R.610 kode 5 Apakah ada ART yang Buta Huruf?", ["Ada", "Tidak ada"], placeholder="Pilih salah satu")
         form_values["Luas Lantai Rumah"] = st.number_input("R.1604 Berapa Luas Lantai Bangunan Tempat Tinggal", min_value= 0)
         form_values["Kepemilikan Kendaraan Bermotor"] = st.selectbox("R.1801 H/J/K ada yang berkode 1 Apakah Rumah Tangga ini memiliki kendaraan bermotor?", ["Ada", "Tidak ada"], placeholder="Pilih salah satu")
         form_values["Penerimaan Bantuan Pemerintah"] = st.selectbox("R.1101 berkode A atau Blok XX ada yang berkode Ya untuk Penerimaan Bantuan Pemerintah?", ["Ada", "Tidak ada"], placeholder= "Pilih salah satu")
@@ -177,6 +177,22 @@ with tab1:
                 data.to_csv(csv_file_path, index=False)
                 st.success("Jawabanmu berhasil dikirim, kamu bisa lakukan review pada menu Review Lembar Jaga ya!")
 
+    #Opsi CSV Upload
+    with st.form("Upload Template CSV", enter_to_submit= False, clear_on_submit= True):
+        file_csv_upload = st.file_uploader("Upload Template CSV yang Sudah Diisi Disini...")
+
+        upload_button = st.form_submit_button("Upload")
+
+        if upload_button:
+            if file_csv_upload is not None :
+                temp_file = pd.read_csv(file_csv_upload, sep=";")
+                append_data = pd.concat([data, temp_file], ignore_index=True, join="inner")
+                append_data = append_data.drop_duplicates(subset= ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"], keep= "last")
+                append_data.to_csv(csv_file_path, index=False)
+                st.success("Dataframe berhasil diperbarui, kamu bisa lakukan review pada menu Review Lembar Jaga ya!")
+            else:
+                st.warning("Masukkan terlebih dahulu Template CSV sebelum klik Upload!")
+    
     st.write("---")
     st.write("Data Terkini :")
     data_terkini = pd.read_csv("arunika_app/data_input_response.csv")
@@ -214,7 +230,7 @@ with tab2:
             "Kepemilikan Kendaraan Bermotor" : st.column_config.SelectboxColumn(options=["Ada", "Tidak ada"]),
             "Penerimaan Bantuan Pemerintah" : st.column_config.SelectboxColumn(options=["Ada", "Tidak ada"])
             },                     
-            hide_index=True, disabled=["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"])
+            hide_index=True)
         hasil_perbaikan = pd.concat([data_terkini, data_edit], ignore_index=True)
         data_perbaikan = hasil_perbaikan.drop_duplicates(subset= ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"], keep= "last")
         data_perbaikan.to_csv(csv_file_path, index=False)

@@ -214,8 +214,7 @@ with tab2:
             bpjs_terpilih = bpjs_df[(bpjs_df["jenis_bpjs"]==jenis_bpjs)]
             premi_bpjs_pns = bpjs_terpilih["premi_bpjs"].iloc[0]
             gaji_pokok = st.number_input("Gaji Pokok Sebulan", min_value=0)
-            art_penerima_bpjs_pns = st.number_input("Jumlah ART Penerima BPJS", min_value=0)
-            total_premi = premi_bpjs_pns * gaji_pokok * art_penerima_bpjs_pns
+            total_premi = premi_bpjs_pns * gaji_pokok
         else:
             bpjs_terpilih = bpjs_df[(bpjs_df["jenis_bpjs"]==jenis_bpjs)]
             premi_bpjs = bpjs_terpilih["premi_bpjs"].iloc[0]
