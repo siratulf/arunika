@@ -174,7 +174,7 @@ with tab1:
                 data = pd.concat([data, pd.DataFrame([form_values])], ignore_index=True)
                 data = data.drop_duplicates(subset= ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"], keep= "last")
                 data["NKS"] = data["NKS"].apply(str)
-                data.to_csv(csv_file_path, index=False, mode='a')
+                data.to_csv(csv_file_path, index=False)
                 st.success("Jawabanmu berhasil dikirim, kamu bisa lakukan review pada menu Review Lembar Jaga ya!")
 
     #Opsi CSV Upload
