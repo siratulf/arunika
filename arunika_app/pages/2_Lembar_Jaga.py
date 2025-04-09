@@ -172,15 +172,9 @@ with tab1:
             if not all(id_values.values()):
                 st.warning("Pastikan semua isian identitas petugas telah terisi!")
             else:
-                """data = pd.concat([data, pd.DataFrame([form_values])], ignore_index=True)
+                data = pd.concat([data, pd.DataFrame([form_values])], ignore_index=True)
                 data = data.drop_duplicates(subset= ["Nama PML", "Nama PPL", "NKS", "Nomor Urut Sampel"], keep= "last")
-                data["NKS"] = data["NKS"].apply(str)
-                data.to_csv(csv_file_path, index=False)"""
-                # Writing to a CSV file
-                with open(csv_file_path, 'w', newline='') as file:
-                    writer = csv.writer(file)
-                    # Writing a single row
-                    writer.writerows(form_values)
+                data.to_csv(csv_file_path, sep="\t")
                 st.success("Jawabanmu berhasil dikirim, kamu bisa lakukan review pada menu Review Lembar Jaga ya!")
 
     #Opsi CSV Upload
